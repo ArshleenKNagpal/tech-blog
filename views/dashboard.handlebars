@@ -1,24 +1,29 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <ul>
+      <article class="post">
+    <div class="title">
+       <a href="/post/{{id}}">{{title}}</a>
+    </div>
+    <div class="meta">
+        <strong>Posted by {{user.username}} on {{format_date created_at}}</strong>
+    </div>
+    </article>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </ul>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<div>
+    <button type="submit"><a href="/dashboard/newpost" class="create-btn">Create New Post</a></button>
 </div>
-{{/each}}
+
+
+
+
+
