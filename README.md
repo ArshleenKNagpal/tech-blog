@@ -23,6 +23,8 @@ The following image shows the application's appearance and functionality:
 ![](./images/screenshot1.png)
 ![](./images/screenshot2.png)
 
+The URL of the Heroku application is: 
+<https://akn-tech-blog.herokuapp.com/>
 
 The URL of the GitHub repository is: 
 <https://github.com/ArshleenKNagpal/tech-blog>
