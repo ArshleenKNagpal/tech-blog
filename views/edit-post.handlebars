@@ -1,34 +1,33 @@
-<article>
-  <a href="/dashboard"> &larr; Back To Dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <input name="post-title" type="text" size="60" value="{{post.title}}" />
-    </div>
-    <div>
-      <textarea name="post-text" type="text">{{post.post_text}}</textarea>
-    </div>
-    <div>
-    <button type="submit">Save Post</button>
-    <button type="button" class="delete-post-btn">Delete Post</button>
-    </div>
-  </form>
-</article>
+{{!-- <div class="card">
+    <h3 class="card-header">Edit Post</h3>
+    <form class="card-body edit-post-form">
+        <label for="post-title" class="form-label">Title</label>
+        <input name="post-title" type="text" value="{{post.title}}" class="form-input" />
+        <label class="form-label" for="content">Content</label>
+        <input name="content" type="text" value="{{post.content}}" class="form-input" />
+        <button type="submit" class="btn">Update Post</button>
+        <button type="button" class="delete-post-btn btn">Delete Post</button>
+    </form>
+</div> --}}
 
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+<div class="card">
+    <h3 class="card-header">Edit Post</h3>
+    <form class="card-body edit-post-form" id="edit-post-form">
+        <div class="form-floating mb-3">
+        <label for="post-title" class="form-label">Title</label>
+        <input name="post-title" type="text" placeholder="{{post.title}}" class="form-input w-100" />
+        </div>
 
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
+        <div class="form-floating mb-3">
+        <label class="form-label" for="content">Content</label>
+        <textarea name="content" type="text" placeholder="{{post.content}}" class="form-input w-100" style="height: 100px"/></textarea>
+        </div>
 
-{{> comments post.comments}}
+        <button type="submit" class="w-100 btn btn-lg btn-info mb-3">Update Post</button>
+        <button type="button" class="delete-post-btn w-100 btn btn-lg btn-danger mb-3">Delete Post</button>
+    </form>
+</div>
 
-<script src="../public/js/edit-post.js"></script>
-<script src="../public/js/delete-post.js"></script>
-<script src="../public/js/comment-post.js"></script>
+
+<script src="/js/edit-post.js"></script>
+<script src="/js/delete-post.js"></script>
