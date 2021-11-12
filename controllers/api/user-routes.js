@@ -14,8 +14,11 @@ router.get('/',  (req, res) => {
   });
 });
 
+
 // GET a single user by id 
 router.get('/:id', (req, res) => {
+
+
   User.findOne({
       attributes: { exclude: ['password'] },
       where: {
@@ -51,6 +54,10 @@ router.get('/:id', (req, res) => {
 
 // Create a user
 router.post('/', (req, res) => {
+  
+  console.log("username is below")
+  console.log(req.body.username)
+
   User.create({
           username: req.body.username,
           password: req.body.password
@@ -72,6 +79,14 @@ router.post('/', (req, res) => {
 
 // LOG IN for users/ verify users 
 router.post('/login', (req, res) => {
+
+
+  console.log("Username is below")
+  console.log(req.body.username)
+  console.log("Password is below")
+  console.log(req.body.password)
+
+
   User.findOne({
           where: {
               username: req.body.username
